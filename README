@@ -1,0 +1,46 @@
+
+This 'robotsim' is a implementation of robots.txt specification for the code test.
+It's written in Java as a standard Java application.
+It reads from stdin and writes to stdout, except for malformmed PLACE commands where it
+sends an error message to stderr.
+
+
+As you can see there are three directories within this one.
+\bin		this contains a binary (jar) file
+\project	this contains a eclipse mars project
+\tests		this contains test data
+
+
+I tried to keep it simple so I came with the following design:
+
+	Program (class)
+		Simulator (class)
+			Robot (class)
+		Direction (class)
+		Side (class)
+
+Program is the class that has the entry point for the application.
+It is also responsable for:
+	Inialization of a Simulator
+	Reading the STDIN and feeding it to the simulator
+
+Simulator is a kind of clue class. It's maps the string commands to
+methods call.
+
+Robot controls what we would call the business logic of the application.
+Most of the test specification is implemented here.
+
+Direction and Side are enums that model the types of problem domain.
+
+There is a additional class Reference<T> which I used as a utility class
+for handling the fact that Java has no mecanism for referencing primitive types.
+
+I didn't use javadocs but there're comments on the most complex parts of the code.
+
+I didn't use something like JUnit bacause I'm not used to use, but I understand it maybe a
+good idea for lots of projects.
+
+This is not the greatest piece of code I ever wrote, but it's a fair one.
+I spent something like 5 hours from seting up the project, understanding and creating the solution and
+writing this instructions. I think it's the average code I would write in a limited time frame like this.
+That way I think you can have a realistic view of what I capable of.
